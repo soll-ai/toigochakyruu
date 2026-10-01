@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#f3eee5">
+
 <title>Жумабай & Мырзайым</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +12,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Ballet:opsz@16..72&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
  --cream:#f3eee5;
  --paper:#faf7f0;
  --sage:#aeb9a3;
  --sage2:#7d8975;
- --ink:#353730;
- --line:rgba(75,80,68,.18);
- --script:'Ballet','Allura','Brush Script MT',cursive;
+ --ink:#4b5149;
+ --line:rgba(75,80,68,.16);
+ --script:'Ballet','Allura',cursive;
  --serif:'Cormorant Garamond',Georgia,serif;
  --sans:'Montserrat',Arial,sans-serif;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+ box-sizing:border-box;
+ margin:0;
+ padding:0
+}
 
 html{
  scroll-behavior:smooth;
@@ -37,7 +43,9 @@ body{
  -webkit-font-smoothing:antialiased
 }
 
-body.locked{overflow:hidden}
+body.locked{
+ overflow:hidden
+}
 
 .section{
  position:relative;
@@ -55,10 +63,16 @@ body.locked{overflow:hidden}
  margin:auto
 }
 
+.center{
+ text-align:center
+}
+
 .reveal{
  opacity:0;
- transform:translateY(30px);
- transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)
+ transform:translateY(28px);
+ transition:
+ opacity 1s ease,
+ transform 1s cubic-bezier(.2,.7,.2,1)
 }
 
 .reveal.visible{
@@ -68,15 +82,16 @@ body.locked{overflow:hidden}
 
 .kicker{
  font:500 9px var(--sans);
- letter-spacing:.34em;
+ letter-spacing:.32em;
  text-transform:uppercase;
- color:var(--sage2);
- margin-bottom:24px
+ color:#7e8778;
+ margin-bottom:25px
 }
 
-.center{text-align:center}
 
-/* REAL FLOWERS */
+/* =========================
+   FLOWERS
+========================= */
 
 .floral{
  position:absolute;
@@ -90,60 +105,83 @@ body.locked{overflow:hidden}
  position:absolute;
  object-fit:cover;
  mix-blend-mode:multiply;
- filter:saturate(.72) contrast(.94) brightness(1.06)
+ filter:saturate(.68) contrast(.93) brightness(1.08);
+
+ mask-image:
+ radial-gradient(
+  ellipse at center,
+  #000 0%,
+  #000 43%,
+  rgba(0,0,0,.82) 60%,
+  rgba(0,0,0,.35) 76%,
+  transparent 94%
+ );
+
+ -webkit-mask-image:
+ radial-gradient(
+  ellipse at center,
+  #000 0%,
+  #000 43%,
+  rgba(0,0,0,.82) 60%,
+  rgba(0,0,0,.35) 76%,
+  transparent 94%
+ );
 }
 
 .hyd{
- width:360px;
- height:500px;
- left:-110px;
- top:-65px;
- mask-image:linear-gradient(90deg,#000 0%,#000 45%,transparent 100%);
- -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 45%,transparent 100%)
+ width:350px;
+ height:490px;
+ left:-105px;
+ top:-55px;
+ opacity:.78
 }
 
 .whiteflower{
- width:320px;
- height:560px;
- right:-100px;
- bottom:-100px;
- mask-image:linear-gradient(270deg,#000 0%,#000 52%,transparent 100%);
- -webkit-mask-image:linear-gradient(270deg,#000 0%,#000 52%,transparent 100%)
+ width:315px;
+ height:545px;
+ right:-95px;
+ bottom:-95px;
+ opacity:.74
 }
 
 .topflower{
- width:250px;
- height:300px;
- right:-75px;
- top:-100px;
- opacity:.48;
- mask-image:radial-gradient(ellipse,#000 10%,transparent 74%);
- -webkit-mask-image:radial-gradient(ellipse,#000 10%,transparent 74%)
+ width:245px;
+ height:295px;
+ right:-70px;
+ top:-90px;
+ opacity:.38
 }
 
 .bottomhyd{
- width:260px;
- height:300px;
- left:-90px;
- bottom:-110px;
- opacity:.45;
- mask-image:radial-gradient(ellipse,#000 10%,transparent 75%);
- -webkit-mask-image:radial-gradient(ellipse,#000 10%,transparent 75%)
+ width:255px;
+ height:295px;
+ left:-80px;
+ bottom:-105px;
+ opacity:.38
 }
 
-/* OPENING */
+
+/* =========================
+   OPENING
+========================= */
 
 #opening{
  position:fixed;
  inset:0;
  z-index:10000;
  background:
- radial-gradient(circle at 50% 42%,rgba(255,255,255,.82),transparent 42%),
+ radial-gradient(
+  circle at 50% 42%,
+  rgba(255,255,255,.88),
+  transparent 44%
+ ),
  var(--cream);
+
  display:flex;
  align-items:center;
  justify-content:center;
  overflow:hidden;
+
  transition:opacity 1.1s ease,visibility 1.1s ease
 }
 
@@ -158,7 +196,7 @@ body.locked{overflow:hidden}
  width:620px;
  height:620px;
  border-radius:50%;
- background:rgba(185,198,173,.18);
+ background:rgba(185,198,173,.16);
  filter:blur(90px)
 }
 
@@ -166,36 +204,52 @@ body.locked{overflow:hidden}
  position:absolute;
  object-fit:cover;
  mix-blend-mode:multiply;
- filter:saturate(.72) brightness(1.07);
- pointer-events:none
+ filter:saturate(.68) brightness(1.08);
+ pointer-events:none;
+
+ mask-image:
+ radial-gradient(
+  ellipse at center,
+  #000 0%,
+  #000 42%,
+  rgba(0,0,0,.78) 61%,
+  rgba(0,0,0,.30) 77%,
+  transparent 95%
+ );
+
+ -webkit-mask-image:
+ radial-gradient(
+  ellipse at center,
+  #000 0%,
+  #000 42%,
+  rgba(0,0,0,.78) 61%,
+  rgba(0,0,0,.30) 77%,
+  transparent 95%
+ );
 }
 
 .open-hyd{
- width:430px;
- height:570px;
- left:-135px;
- bottom:-90px;
- mask-image:linear-gradient(90deg,#000 0%,#000 43%,transparent 100%);
- -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 43%,transparent 100%)
+ width:425px;
+ height:565px;
+ left:-130px;
+ bottom:-85px;
+ opacity:.82
 }
 
 .open-white{
  width:390px;
- height:600px;
- right:-135px;
- bottom:-110px;
- mask-image:linear-gradient(270deg,#000 0%,#000 48%,transparent 100%);
- -webkit-mask-image:linear-gradient(270deg,#000 0%,#000 48%,transparent 100%)
+ height:595px;
+ right:-125px;
+ bottom:-105px;
+ opacity:.78
 }
 
 .open-top{
- width:260px;
- height:330px;
- right:-70px;
- top:-100px;
- opacity:.5;
- mask-image:radial-gradient(ellipse,#000 10%,transparent 72%);
- -webkit-mask-image:radial-gradient(ellipse,#000 10%,transparent 72%)
+ width:255px;
+ height:325px;
+ right:-65px;
+ top:-95px;
+ opacity:.42
 }
 
 .open-content{
@@ -203,6 +257,7 @@ body.locked{overflow:hidden}
  z-index:5;
  width:100%;
  height:100%;
+
  display:flex;
  align-items:center;
  justify-content:center;
@@ -211,22 +266,25 @@ body.locked{overflow:hidden}
 
 .open-small{
  position:absolute;
- top:11%;
+ top:10.5%;
  font:400 8px var(--sans);
  letter-spacing:.4em;
  text-transform:uppercase;
- color:#777c70
+ color:#777d72
 }
 
 .open-names{
  position:absolute;
- bottom:8%;
- font:400 31px var(--script);
+ bottom:7.5%;
+ font:400 29px var(--script);
  color:#687260
 }
 
+
+/* ENVELOPE */
+
 .envelope-wrap{
- width:min(390px,82vw);
+ width:min(94vw,520px);
  cursor:pointer;
  transition:transform .6s ease
 }
@@ -239,35 +297,21 @@ body.locked{overflow:hidden}
  position:relative;
  width:100%;
  aspect-ratio:1.55;
- filter:drop-shadow(0 25px 35px rgba(56,53,45,.2))
+ filter:drop-shadow(0 28px 38px rgba(56,53,45,.20))
 }
 
 .env-back{
  position:absolute;
  inset:0;
- border-radius:5px;
- background:linear-gradient(145deg,#fffdf8,#e6dfd3);
- box-shadow:inset 0 0 0 1px rgba(70,68,60,.08)
-}
-
-.env-paper{
- position:absolute;
- width:74%;
- height:82%;
- left:13%;
- top:8%;
- z-index:2;
- background:#faf7f0;
- border:1px solid rgba(70,65,55,.08);
- box-shadow:0 5px 18px rgba(50,48,42,.1);
- overflow:hidden;
- transition:transform 1s cubic-bezier(.2,.8,.2,1)
-}
-
-.env-paper img{
- width:100%;
- height:100%;
- object-fit:cover
+ border-radius:7px;
+ background:
+ linear-gradient(
+  145deg,
+  #fffefa,
+  #e6dfd3
+ );
+ box-shadow:
+ inset 0 0 0 1px rgba(70,68,60,.08)
 }
 
 .env-flap{
@@ -277,10 +321,23 @@ body.locked{overflow:hidden}
  width:100%;
  height:65%;
  z-index:4;
- background:linear-gradient(155deg,#fffefa,#e5ddd0);
- clip-path:polygon(0 0,100% 0,50% 100%);
+
+ background:
+ linear-gradient(
+  155deg,
+  #fffefa,
+  #e4ddd1
+ );
+
+ clip-path:polygon(
+  0 0,
+  100% 0,
+  50% 100%
+ );
+
  transform-origin:top center;
- transition:transform 1.15s cubic-bezier(.2,.75,.2,1)
+ transition:
+ transform 1.15s cubic-bezier(.2,.75,.2,1)
 }
 
 .env-bottom{
@@ -290,8 +347,21 @@ body.locked{overflow:hidden}
  width:100%;
  height:62%;
  z-index:5;
- background:linear-gradient(35deg,#eee7db,#faf7ef);
- clip-path:polygon(0 100%,0 0,50% 65%,100% 0,100% 100%)
+
+ background:
+ linear-gradient(
+  35deg,
+  #eee7db,
+  #faf7ef
+ );
+
+ clip-path:polygon(
+  0 100%,
+  0 0,
+  50% 65%,
+  100% 0,
+  100% 100%
+ )
 }
 
 .env-seal{
@@ -299,17 +369,33 @@ body.locked{overflow:hidden}
  z-index:8;
  left:50%;
  top:54%;
+
  transform:translate(-50%,-50%);
- width:55px;
- height:55px;
+
+ width:76px;
+ height:76px;
+
  border-radius:50%;
+
  display:flex;
  align-items:center;
  justify-content:center;
- background:#d0d6c8;
- color:#687260;
- font:400 22px var(--script);
- box-shadow:0 5px 16px rgba(60,65,53,.14);
+
+ background:
+ radial-gradient(
+  circle at 35% 30%,
+  #e2e6dc,
+  #c5cdbd
+ );
+
+ color:#65705f;
+
+ font:400 31px var(--script);
+
+ box-shadow:
+ 0 6px 18px rgba(60,65,53,.17),
+ inset 0 0 0 1px rgba(255,255,255,.35);
+
  transition:.4s
 }
 
@@ -318,21 +404,22 @@ body.locked{overflow:hidden}
  z-index:1
 }
 
-.envelope-open .env-paper{
- transform:translateY(-20px)
-}
-
 .envelope-open .env-seal{
  opacity:0;
- transform:translate(-50%,-50%) scale(.7)
+ transform:
+ translate(-50%,-50%)
+ scale(.7)
 }
 
 .open-instruction{
- margin-top:36px;
- font:400 8px var(--sans);
- letter-spacing:.34em;
+ margin-top:38px;
+
+ font:400 9px var(--sans);
+ letter-spacing:.32em;
  text-transform:uppercase;
- color:#85877f;
+
+ color:#7e8179;
+
  animation:pulse 2.5s ease-in-out infinite
 }
 
@@ -341,7 +428,10 @@ body.locked{overflow:hidden}
  50%{opacity:1}
 }
 
-/* FLORETS */
+
+/* =========================
+   FLORETS
+========================= */
 
 #florets{
  position:fixed;
@@ -356,16 +446,27 @@ body.locked{overflow:hidden}
  top:-30px;
  width:18px;
  height:18px;
+
  animation:fall linear infinite;
+
  opacity:.82;
- filter:drop-shadow(0 2px 2px rgba(70,70,55,.08))
+ filter:drop-shadow(
+ 0 2px 2px rgba(70,70,55,.08)
+ )
 }
 
 .floret i{
  position:absolute;
  width:7px;
  height:10px;
- background:linear-gradient(135deg,#fbfaf2,#cdd6c4);
+
+ background:
+ linear-gradient(
+ 135deg,
+  #fbfaf2,
+  #cdd6c4
+ );
+
  border-radius:70% 25% 70% 25%
 }
 
@@ -404,49 +505,82 @@ body.locked{overflow:hidden}
  height:4px;
  left:6px;
  top:6px;
+
  background:#d7cfae;
  border-radius:50%
 }
 
 @keyframes fall{
+
  0%{
-  transform:translate3d(0,-40px,0) rotate(0deg) scale(.7);
+  transform:
+  translate3d(0,-40px,0)
+  rotate(0deg)
+  scale(.7);
   opacity:0
  }
- 8%{opacity:.82}
+
+ 8%{
+  opacity:.82
+ }
+
  30%{
-  transform:translate3d(34px,30vh,0) rotate(95deg) scale(1)
+  transform:
+  translate3d(34px,30vh,0)
+  rotate(95deg)
+  scale(1)
  }
+
  55%{
-  transform:translate3d(-28px,58vh,0) rotate(190deg) scale(.9)
+  transform:
+  translate3d(-28px,58vh,0)
+  rotate(190deg)
+  scale(.9)
  }
+
  78%{
-  transform:translate3d(42px,82vh,0) rotate(280deg) scale(.84)
+  transform:
+  translate3d(42px,82vh,0)
+  rotate(280deg)
+  scale(.84)
  }
+
  100%{
-  transform:translate3d(-18px,112vh,0) rotate(360deg) scale(.7);
+  transform:
+  translate3d(-18px,112vh,0)
+  rotate(360deg)
+  scale(.7);
   opacity:0
  }
 }
 
-/* MUSIC */
+
+/* =========================
+   MUSIC
+========================= */
 
 #music{
  position:fixed;
  right:18px;
  top:18px;
  z-index:5000;
+
  width:43px;
  height:43px;
+
  border:1px solid rgba(50,55,46,.18);
  border-radius:50%;
+
  background:rgba(250,247,240,.75);
  backdrop-filter:blur(12px);
+
  display:flex;
  align-items:center;
  justify-content:center;
+
  opacity:0;
  pointer-events:none;
+
  transition:.5s
 }
 
@@ -489,7 +623,10 @@ body.locked{overflow:hidden}
  to{height:14px}
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
  background:#d8d5cd
@@ -498,9 +635,12 @@ body.locked{overflow:hidden}
 .hero>img{
  position:absolute;
  inset:0;
+
  width:100%;
  height:100%;
+
  object-fit:cover;
+
  filter:saturate(.72) contrast(.96)
 }
 
@@ -508,12 +648,15 @@ body.locked{overflow:hidden}
  content:"";
  position:absolute;
  inset:0;
- background:linear-gradient(
+
+ background:
+ linear-gradient(
   to bottom,
   rgba(20,20,17,.05),
   transparent 45%,
   rgba(20,20,17,.32)
  );
+
  z-index:1
 }
 
@@ -521,29 +664,36 @@ body.locked{overflow:hidden}
  position:absolute;
  inset:0;
  z-index:5;
+
  display:flex;
  align-items:center;
  justify-content:flex-end;
  flex-direction:column;
+
  padding:0 20px 13vh;
+
  text-align:center;
+
  color:white;
- text-shadow:0 2px 18px rgba(0,0,0,.24)
+
+ text-shadow:
+ 0 2px 18px rgba(0,0,0,.22)
 }
 
 .hero-kicker{
  font:400 8px var(--sans);
  letter-spacing:.38em;
- margin-bottom:13px
+ margin-bottom:14px
 }
 
 .hero-names{
- font:400 clamp(58px,13vw,112px) var(--script);
- line-height:.8
+ font:400 clamp(50px,11vw,92px) var(--script);
+ line-height:.84
 }
 
 .hero-date{
  margin-top:22px;
+
  font:400 9px var(--sans);
  letter-spacing:.38em
 }
@@ -551,10 +701,14 @@ body.locked{overflow:hidden}
 .scroll{
  position:absolute;
  z-index:7;
+
  bottom:22px;
  left:50%;
+
  transform:translateX(-50%);
+
  color:white;
+
  display:flex;
  align-items:center;
  flex-direction:column;
@@ -587,7 +741,10 @@ body.locked{overflow:hidden}
  to{transform:translateY(230%)}
 }
 
-/* INVITATION */
+
+/* =========================
+   INVITATION
+========================= */
 
 .invitation{
  min-height:88vh;
@@ -601,20 +758,28 @@ body.locked{overflow:hidden}
 }
 
 .inv-title{
- font:400 clamp(56px,10vw,94px) var(--script);
- line-height:.8;
- color:#6e7866;
- margin-bottom:27px
+ font:400 clamp(52px,9vw,82px) var(--script);
+ line-height:.88;
+
+ color:#737d6c;
+
+ margin-bottom:30px
 }
 
 .inv-text{
  max-width:620px;
  margin:auto;
- font:400 clamp(21px,3vw,29px)/1.45 var(--serif);
- color:#373933
+
+ font:
+ 400 clamp(20px,2.8vw,25px)/1.52 var(--serif);
+
+ color:#4b5149
 }
 
-/* PHOTO */
+
+/* =========================
+   PHOTO
+========================= */
 
 .photo-section{
  min-height:90vh;
@@ -624,6 +789,7 @@ body.locked{overflow:hidden}
 .photo-card{
  width:min(650px,82vw);
  margin:auto;
+
  position:relative;
  z-index:5
 }
@@ -632,56 +798,79 @@ body.locked{overflow:hidden}
  display:block;
  width:100%;
  height:auto;
+
  max-height:82vh;
+
  object-fit:contain;
- box-shadow:0 25px 70px rgba(57,53,43,.13)
+
+ box-shadow:
+ 0 25px 70px rgba(57,53,43,.13)
 }
 
-/* DATE */
+
+/* =========================
+   DATE
+========================= */
 
 .date-section{
  background:#f2eee6
 }
 
 .date-number{
- font:300 clamp(100px,22vw,220px)/.7 var(--serif);
- letter-spacing:-.06em;
- color:#687362
+ font:
+ 300 clamp(90px,19vw,180px)/.72 var(--serif);
+
+ letter-spacing:-.05em;
+
+ color:#6f7969
 }
 
 .date-month{
  margin-top:25px;
- font:400 10px var(--sans);
- letter-spacing:.45em;
- color:#686b63
+
+ font:400 11px var(--sans);
+ letter-spacing:.43em;
+
+ color:#70766d
 }
 
 .date-year{
- font:400 52px var(--script);
+ font:400 46px var(--script);
+
  color:#9da895;
+
  margin-top:12px
 }
 
 .countdown{
- margin:60px auto 0;
+ margin:58px auto 0;
+
  display:flex;
  justify-content:center;
- gap:clamp(17px,5vw,45px)
+
+ gap:clamp(18px,5vw,42px)
 }
 
 .count-value{
- font:300 clamp(34px,7vw,58px) var(--serif);
- color:#44483f
+ font:
+ 300 clamp(32px,6vw,50px) var(--serif);
+
+ color:#50564e
 }
 
 .count-label{
  margin-top:4px;
- font:400 7px var(--sans);
+
+ font:400 8px var(--sans);
  letter-spacing:.2em;
- color:#8b8d85
+
+ color:#898e86
 }
 
-/* PROGRAM */
+
+/* =========================
+   PROGRAM
+========================= */
 
 .program{
  background:var(--paper);
@@ -693,10 +882,15 @@ body.locked{overflow:hidden}
 }
 
 .program-title{
- font:400 76px var(--script);
- line-height:.8;
+ font:
+ 400 clamp(52px,8vw,70px) var(--script);
+
+ line-height:.85;
+
  text-align:center;
+
  color:#727d6a;
+
  margin-bottom:65px
 }
 
@@ -706,17 +900,23 @@ body.locked{overflow:hidden}
 
 .timeline:before{
  content:"";
+
  position:absolute;
+
  left:50%;
  top:0;
  bottom:0;
+
  width:1px;
+
  background:var(--line)
 }
 
 .item{
  position:relative;
+
  width:50%;
+
  padding:0 45px 58px
 }
 
@@ -732,13 +932,20 @@ body.locked{overflow:hidden}
 
 .dot{
  position:absolute;
+
  top:3px;
+
  width:8px;
  height:8px;
+
  border-radius:50%;
+
  background:#aeb8a3;
+
  border:2px solid var(--paper);
- box-shadow:0 0 0 1px rgba(100,110,90,.22)
+
+ box-shadow:
+ 0 0 0 1px rgba(100,110,90,.22)
 }
 
 .item:nth-child(odd) .dot{
@@ -750,18 +957,26 @@ body.locked{overflow:hidden}
 }
 
 .time{
- font:400 10px var(--sans);
- letter-spacing:.22em;
+ font:400 11px var(--sans);
+
+ letter-spacing:.2em;
+
  color:#8b9283;
+
  margin-bottom:8px
 }
 
 .item-name{
- font:400 25px var(--serif);
- color:#383b35
+ font:
+ 400 24px var(--serif);
+
+ color:#4b5149
 }
 
-/* HOSTS */
+
+/* =========================
+   HOSTS
+========================= */
 
 .hosts{
  background:#ebe7de
@@ -773,25 +988,36 @@ body.locked{overflow:hidden}
 
 .host-kicker{
  font:400 9px var(--sans);
+
  letter-spacing:.4em;
+
  color:#7e8677;
+
  margin-bottom:35px
 }
 
 .host-name{
- font:400 clamp(68px,12vw,105px) var(--script);
- line-height:.72;
- color:#626d5c
+ font:
+ 400 clamp(56px,10vw,88px) var(--script);
+
+ line-height:.78;
+
+ color:#687361
 }
 
 .divider{
  width:45px;
  height:1px;
+
  background:#adb5a5;
+
  margin:30px auto
 }
 
-/* VENUE */
+
+/* =========================
+   VENUE
+========================= */
 
 .venue{
  background:#ddd
@@ -800,66 +1026,98 @@ body.locked{overflow:hidden}
 .venue>img{
  position:absolute;
  inset:0;
+
  width:100%;
  height:100%;
+
  object-fit:cover;
+
  filter:saturate(.72) brightness(.83)
 }
 
 .venue:after{
  content:"";
+
  position:absolute;
  inset:0;
- background:linear-gradient(
+
+ background:
+ linear-gradient(
   to top,
   rgba(20,22,18,.52),
   rgba(20,22,18,.02) 65%
  );
+
  z-index:1
 }
 
 .venue-content{
  position:absolute;
  z-index:5;
+
  bottom:11%;
+
  width:100%;
+
  text-align:center;
+
  color:white;
- text-shadow:0 2px 18px rgba(0,0,0,.3)
+
+ text-shadow:
+ 0 2px 18px rgba(0,0,0,.3)
 }
 
 .venue-kicker{
  font:400 8px var(--sans);
+
  letter-spacing:.35em;
+
  margin-bottom:13px
 }
 
 .venue-name{
- font:400 clamp(68px,14vw,125px) var(--script);
- line-height:.8
+ font:
+ 400 clamp(58px,11vw,100px) var(--script);
+
+ line-height:.82
 }
 
 .venue-address{
  margin-top:20px;
+
  font:400 8px var(--sans);
+
  letter-spacing:.25em;
+
  text-transform:uppercase
 }
 
 .map{
  display:inline-flex;
+
  margin-top:24px;
+
  padding:12px 22px;
+
  border:1px solid rgba(255,255,255,.55);
+
  color:white;
+
  text-decoration:none;
+
  font:400 8px var(--sans);
+
  letter-spacing:.22em;
+
  backdrop-filter:blur(8px);
+
  background:rgba(255,255,255,.08)
 }
 
-/* FINAL */
+
+/* =========================
+   FINAL
+========================= */
 
 .final{
  background:var(--paper);
@@ -867,17 +1125,25 @@ body.locked{overflow:hidden}
 }
 
 .final-script{
- font:400 clamp(58px,11vw,100px)/.85 var(--script);
- color:#6d7865;
+ font:
+ 400 clamp(52px,9vw,84px)/.88 var(--script);
+
+ color:#707b6c;
+
  margin-bottom:30px
 }
 
 .final-text{
- font:400 clamp(23px,4vw,34px)/1.35 var(--serif);
- color:#44473f
+ font:
+ 400 clamp(21px,3.5vw,30px)/1.4 var(--serif);
+
+ color:#4b5149
 }
 
-/* LAST */
+
+/* =========================
+   LAST PHOTO
+========================= */
 
 .last{
  background:#252823
@@ -886,28 +1152,42 @@ body.locked{overflow:hidden}
 .last>img{
  position:absolute;
  inset:0;
+
  width:100%;
  height:100%;
+
  object-fit:cover;
+
  filter:saturate(.7) contrast(.94)
 }
 
 .last:after{
  content:"";
+
  position:absolute;
  inset:0;
+
  background:rgba(0,0,0,.14)
 }
 
 .signature{
  position:absolute;
  z-index:5;
+
  right:22px;
  bottom:18px;
+
  color:rgba(255,255,255,.45);
+
  font:400 7px var(--sans);
+
  letter-spacing:.2em
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
@@ -916,7 +1196,7 @@ body.locked{overflow:hidden}
   height:380px;
   left:-105px;
   top:-30px;
-  opacity:.82
+  opacity:.78
  }
 
  .whiteflower{
@@ -924,7 +1204,7 @@ body.locked{overflow:hidden}
   height:410px;
   right:-90px;
   bottom:-60px;
-  opacity:.78
+  opacity:.74
  }
 
  .topflower{
@@ -956,8 +1236,14 @@ body.locked{overflow:hidden}
   height:230px
  }
 
- .open-names{
-  font-size:25px
+ .envelope-wrap{
+  width:min(94vw,430px)
+ }
+
+ .env-seal{
+  width:70px;
+  height:70px;
+  font-size:29px
  }
 
  .open-small{
@@ -965,24 +1251,51 @@ body.locked{overflow:hidden}
   font-size:7px
  }
 
+ .open-instruction{
+  font-size:8px;
+  margin-top:34px
+ }
+
+ .open-names{
+  font-size:25px
+ }
+
  .hero-content{
   padding-bottom:14vh
  }
 
  .hero-names{
-  font-size:clamp(52px,15vw,82px)
+  font-size:clamp(48px,14vw,78px)
  }
 
  .invitation .inner{
-  padding:100px 25px
+  padding:90px 24px
+ }
+
+ .inv-title{
+  font-size:clamp(50px,15vw,68px)
  }
 
  .inv-text{
-  font-size:22px
+  font-size:20px;
+  line-height:1.5
  }
 
- .photo-card{
-  width:83vw
+ .date-number{
+  font-size:clamp(88px,24vw,145px)
+ }
+
+ .date-year{
+  font-size:44px
+ }
+
+ .countdown{
+  gap:18px;
+  margin-top:50px
+ }
+
+ .count-value{
+  font-size:clamp(30px,8vw,42px)
  }
 
  .program{
@@ -990,7 +1303,7 @@ body.locked{overflow:hidden}
  }
 
  .program-title{
-  font-size:65px;
+  font-size:56px;
   margin-bottom:50px
  }
 
@@ -1014,85 +1327,165 @@ body.locked{overflow:hidden}
  }
 
  .item-name{
-  font-size:23px
+  font-size:22px
+ }
+
+ .host-name{
+  font-size:clamp(55px,16vw,78px)
  }
 
  .venue-content{
   padding:0 20px
  }
+
+ .venue-name{
+  font-size:clamp(56px,15vw,88px)
+ }
+
+ .final-script{
+  font-size:clamp(50px,14vw,72px)
+ }
+
+ .final-text{
+  font-size:21px
+ }
 }
+
 </style>
 </head>
 
+
 <body class="locked">
+
+
+<!-- OPENING -->
 
 <div id="opening">
 
  <div class="open-glow"></div>
 
- <img class="open-flower open-hyd" src="HYDRANGEA.JPG" alt="">
- <img class="open-flower open-white" src="WHITE_FLOWER.JPG" alt="">
- <img class="open-flower open-top" src="WHITE_FLOWER.JPG" alt="">
+ <img
+  class="open-flower open-hyd"
+  src="HYDRANGEA.JPG"
+  alt=""
+ >
+
+ <img
+  class="open-flower open-white"
+  src="WHITE_FLOWER.JPG"
+  alt=""
+ >
+
+ <img
+  class="open-flower open-top"
+  src="WHITE_FLOWER.JPG"
+  alt=""
+ >
+
 
  <div class="open-content">
 
-  <div class="open-small">ЖУМАБАЙ & МЫРЗАЙЫМ</div>
+  <div class="open-small">
+   ЖУМАБАЙ & МЫРЗАЙЫМ
+  </div>
 
-  <div class="envelope-wrap" id="envelopeButton">
 
-   <div class="envelope" id="envelope">
+  <div
+   class="envelope-wrap"
+   id="envelopeButton"
+  >
+
+   <div
+    class="envelope"
+    id="envelope"
+   >
 
     <div class="env-back"></div>
-
-    <div class="env-paper">
-     <img src="IMG_1.JPG" alt="">
-    </div>
 
     <div class="env-flap"></div>
 
     <div class="env-bottom"></div>
 
-    <div class="env-seal">Ж & М</div>
+    <div class="env-seal">
+     Ж & М
+    </div>
 
    </div>
 
   </div>
 
+
   <div class="open-instruction">
    ЧАКЫРУУНУ АЧУУ ҮЧҮН БАСЫҢЫЗ
   </div>
+
 
   <div class="open-names">
    Жумабай & Мырзайым
   </div>
 
  </div>
+
 </div>
+
 
 <div id="florets"></div>
 
-<audio id="audio" preload="auto" loop>
- <source src="wedding-music.mp3.mp3" type="audio/mpeg">
+
+<audio
+ id="audio"
+ preload="auto"
+ loop
+>
+ <source
+  src="wedding-music.mp3.mp3"
+  type="audio/mpeg"
+ >
 </audio>
 
-<button id="music" aria-label="Музыка">
+
+<button
+ id="music"
+ aria-label="Музыка"
+>
+
  <div class="music-bars">
   <span></span>
   <span></span>
   <span></span>
  </div>
+
 </button>
+
 
 <main>
 
+
+<!-- HERO -->
+
 <section class="section hero">
 
- <img src="IMG_1.JPG" alt="">
+ <img
+  src="IMG_1.JPG"
+  alt=""
+ >
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="hero-content">
 
@@ -1110,63 +1503,127 @@ body.locked{overflow:hidden}
 
  </div>
 
+
  <div class="scroll">
-  <span>SCROLL</span>
+
+  <span>
+   SCROLL
+  </span>
+
   <div class="scroll-line"></div>
+
  </div>
 
 </section>
 
+
+<!-- INVITATION -->
+
 <section class="section invitation">
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
-  <img class="flower topflower" src="WHITE_FLOWER.JPG" alt="">
-  <img class="flower bottomhyd" src="HYDRANGEA.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower topflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower bottomhyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="inner reveal center">
 
-  <div class="kicker">
-   СҮЙҮНЧҮ КҮН
-  </div>
-
   <div class="inv-title">
-   Сиздерди чакырабыз
+   Чакыруу
   </div>
 
   <p class="inv-text">
-   Сиздерди балдарыбыздын үйлөнүү-үлпөт тоюна келип, ак дасторкон үстүндө даам татып, батаңыздарды берип, кадырлуу коногубуз болуп кетүүгө чакырабыз!
+   Сиздерди балдарыбыздын үйлөнүү-үлпөт тоюна келип,
+   ак дасторкон үстүндө даам татып, батаңыздарды берип,
+   кадырлуу коногубуз болуп кетүүгө чакырабыз!
   </p>
 
  </div>
 
 </section>
 
+
+<!-- PHOTO -->
+
 <section class="section photo-section">
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="inner reveal">
 
   <div class="photo-card">
-   <img src="IMG_5%20%282%29.JPG" alt="Жумабай & Мырзайым">
+
+   <img
+    src="IMG_5%20%282%29.JPG"
+    alt="Жумабай & Мырзайым"
+   >
+
   </div>
 
  </div>
 
 </section>
 
+
+<!-- DATE -->
+
 <section class="section date-section">
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="inner center reveal">
 
@@ -1186,26 +1643,62 @@ body.locked{overflow:hidden}
    2026
   </div>
 
+
   <div class="countdown">
 
    <div>
-    <div class="count-value" id="days">00</div>
-    <div class="count-label">КҮН</div>
+    <div
+     class="count-value"
+     id="days"
+    >
+     00
+    </div>
+
+    <div class="count-label">
+     КҮН
+    </div>
    </div>
 
-   <div>
-    <div class="count-value" id="hours">00</div>
-    <div class="count-label">СААТ</div>
-   </div>
 
    <div>
-    <div class="count-value" id="minutes">00</div>
-    <div class="count-label">МҮНӨТ</div>
+    <div
+     class="count-value"
+     id="hours"
+    >
+     00
+    </div>
+
+    <div class="count-label">
+     СААТ
+    </div>
    </div>
 
+
    <div>
-    <div class="count-value" id="seconds">00</div>
-    <div class="count-label">СЕКУНД</div>
+    <div
+     class="count-value"
+     id="minutes"
+    >
+     00
+    </div>
+
+    <div class="count-label">
+     МҮНӨТ
+    </div>
+   </div>
+
+
+   <div>
+    <div
+     class="count-value"
+     id="seconds"
+    >
+     00
+    </div>
+
+    <div class="count-label">
+     СЕКУНД
+    </div>
    </div>
 
   </div>
@@ -1214,12 +1707,27 @@ body.locked{overflow:hidden}
 
 </section>
 
+
+<!-- PROGRAM -->
+
 <section class="section program">
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="inner reveal">
 
@@ -1227,36 +1735,82 @@ body.locked{overflow:hidden}
    Той программасы
   </div>
 
+
   <div class="timeline">
 
-   <div class="item">
-    <div class="dot"></div>
-    <div class="time">16:00</div>
-    <div class="item-name">Коноктордун чогулушу</div>
-   </div>
 
    <div class="item">
+
     <div class="dot"></div>
-    <div class="time">17:00</div>
-    <div class="item-name">Тойдун башталышы</div>
+
+    <div class="time">
+     16:00
+    </div>
+
+    <div class="item-name">
+     Коноктордун чогулушу
+    </div>
+
    </div>
 
-   <div class="item">
-    <div class="dot"></div>
-    <div class="time">17:30</div>
-    <div class="item-name">Банкет</div>
-   </div>
 
    <div class="item">
+
     <div class="dot"></div>
-    <div class="time">21:00</div>
-    <div class="item-name">Торт кесүү аземи</div>
+
+    <div class="time">
+     17:00
+    </div>
+
+    <div class="item-name">
+     Тойдун башталышы
+    </div>
+
    </div>
 
+
    <div class="item">
+
     <div class="dot"></div>
-    <div class="time">23:00</div>
-    <div class="item-name">Тойдун аяктоосу</div>
+
+    <div class="time">
+     17:30
+    </div>
+
+    <div class="item-name">
+     Банкет
+    </div>
+
+   </div>
+
+
+   <div class="item">
+
+    <div class="dot"></div>
+
+    <div class="time">
+     21:00
+    </div>
+
+    <div class="item-name">
+     Торт кесүү аземи
+    </div>
+
+   </div>
+
+
+   <div class="item">
+
+    <div class="dot"></div>
+
+    <div class="time">
+     23:00
+    </div>
+
+    <div class="item-name">
+     Тойдун аяктоосу
+    </div>
+
    </div>
 
   </div>
@@ -1265,12 +1819,27 @@ body.locked{overflow:hidden}
 
 </section>
 
+
+<!-- HOSTS -->
+
 <section class="section hosts">
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="inner reveal center">
 
@@ -1292,9 +1861,15 @@ body.locked{overflow:hidden}
 
 </section>
 
+
+<!-- VENUE -->
+
 <section class="section venue">
 
- <img src="IMG_4.PNG" alt="Аврора">
+ <img
+  src="IMG_4.PNG"
+  alt="Аврора"
+ >
 
  <div class="venue-content reveal">
 
@@ -1314,7 +1889,8 @@ body.locked{overflow:hidden}
    class="map"
    href="https://2gis.kg"
    target="_blank"
-   rel="noopener">
+   rel="noopener"
+  >
    КАРТАДАН КӨРҮҮ
   </a>
 
@@ -1322,12 +1898,27 @@ body.locked{overflow:hidden}
 
 </section>
 
+
+<!-- FINAL -->
+
 <section class="section final">
 
  <div class="floral">
-  <img class="flower hyd" src="HYDRANGEA.JPG" alt="">
-  <img class="flower whiteflower" src="WHITE_FLOWER.JPG" alt="">
+
+  <img
+   class="flower hyd"
+   src="HYDRANGEA.JPG"
+   alt=""
+  >
+
+  <img
+   class="flower whiteflower"
+   src="WHITE_FLOWER.JPG"
+   alt=""
+  >
+
  </div>
+
 
  <div class="inner reveal center">
 
@@ -1343,9 +1934,15 @@ body.locked{overflow:hidden}
 
 </section>
 
+
+<!-- LAST PHOTO -->
+
 <section class="section last">
 
- <img src="IMG_3.JPG" alt="">
+ <img
+  src="IMG_3.JPG"
+  alt=""
+ >
 
  <div class="signature">
   © SOLL.AI
@@ -1353,148 +1950,270 @@ body.locked{overflow:hidden}
 
 </section>
 
+
 </main>
+
 
 <script>
 
-const opening=document.getElementById('opening');
-const envelope=document.getElementById('envelope');
-const button=document.getElementById('envelopeButton');
-const audio=document.getElementById('audio');
-const music=document.getElementById('music');
-const florets=document.getElementById('florets');
+const opening =
+ document.getElementById('opening');
+
+const envelope =
+ document.getElementById('envelope');
+
+const button =
+ document.getElementById('envelopeButton');
+
+const audio =
+ document.getElementById('audio');
+
+const music =
+ document.getElementById('music');
+
+const florets =
+ document.getElementById('florets');
+
 
 let opened=false;
 let floretTimer=null;
 
-button.addEventListener('click',async()=>{
 
- if(opened)return;
+button.addEventListener(
+ 'click',
+ async()=>{
 
- opened=true;
+  if(opened)return;
 
- envelope.classList.add('envelope-open');
+  opened=true;
 
- audio.volume=.55;
+  envelope.classList.add(
+   'envelope-open'
+  );
 
- try{
-  await audio.play();
-  music.classList.add('playing');
- }catch(e){}
 
- startFlorets();
+  audio.volume=.55;
 
- setTimeout(()=>{
-
-  opening.classList.add('hide');
-
-  document.body.classList.remove('locked');
-
-  music.classList.add('show');
-
-  window.scrollTo(0,0);
-
- },1150);
-
-});
-
-music.addEventListener('click',async()=>{
-
- if(audio.paused){
 
   try{
+
    await audio.play();
-   music.classList.add('playing');
+
+   music.classList.add(
+    'playing'
+   );
+
   }catch(e){}
 
- }else{
 
-  audio.pause();
-  music.classList.remove('playing');
+  startFlorets();
+
+
+  setTimeout(()=>{
+
+   opening.classList.add(
+    'hide'
+   );
+
+   document.body.classList.remove(
+    'locked'
+   );
+
+   music.classList.add(
+    'show'
+   );
+
+   window.scrollTo(
+    0,
+    0
+   );
+
+  },1150);
 
  }
+);
 
-});
+
+music.addEventListener(
+ 'click',
+ async()=>{
+
+  if(audio.paused){
+
+   try{
+
+    await audio.play();
+
+    music.classList.add(
+     'playing'
+    );
+
+   }catch(e){}
+
+  }else{
+
+   audio.pause();
+
+   music.classList.remove(
+    'playing'
+   );
+
+  }
+
+ }
+);
+
 
 function makeFloret(){
 
- const f=document.createElement('div');
+ const f =
+  document.createElement(
+   'div'
+  );
 
  f.className='floret';
 
- f.style.left=(Math.random()*100)+'vw';
+ f.style.left =
+  (Math.random()*100)+'vw';
 
- f.style.animationDuration=(7+Math.random()*8)+'s';
+ f.style.animationDuration =
+  (7+Math.random()*8)+'s';
 
- f.style.animationDelay=(Math.random()*1.8)+'s';
+ f.style.animationDelay =
+  (Math.random()*1.8)+'s';
 
- f.innerHTML=
- '<i></i><i></i><i></i><i></i><i></i><b></b>';
+ f.innerHTML =
+  '<i></i><i></i><i></i><i></i><i></i><b></b>';
 
  florets.appendChild(f);
 
- setTimeout(()=>f.remove(),17000);
+ setTimeout(
+  ()=>f.remove(),
+  17000
+ );
 
 }
+
 
 function startFlorets(){
 
  if(floretTimer)return;
 
  for(let i=0;i<14;i++){
-  setTimeout(makeFloret,i*120);
+
+  setTimeout(
+   makeFloret,
+   i*120
+  );
+
  }
 
- floretTimer=setInterval(()=>{
-  makeFloret();
- },540);
+ floretTimer =
+  setInterval(
+   makeFloret,
+   540
+  );
 
 }
 
-const observer=new IntersectionObserver(entries=>{
 
- entries.forEach(e=>{
+const observer =
+ new IntersectionObserver(
+  entries=>{
 
-  if(e.isIntersecting){
-   e.target.classList.add('visible');
+   entries.forEach(
+    e=>{
+
+     if(e.isIntersecting){
+
+      e.target.classList.add(
+       'visible'
+      );
+
+     }
+
+    }
+   );
+
+  },
+  {
+   threshold:.12
   }
+ );
 
- });
 
-},{threshold:.12});
+document
+ .querySelectorAll('.reveal')
+ .forEach(
+  e=>observer.observe(e)
+ );
 
-document.querySelectorAll('.reveal').forEach(e=>{
- observer.observe(e);
-});
 
-const target=
- new Date('2026-11-05T17:00:00+06:00').getTime();
+const target =
+ new Date(
+  '2026-11-05T17:00:00+06:00'
+ ).getTime();
+
 
 function countdown(){
 
- const d=target-Date.now();
+ const d =
+  target-Date.now();
 
- const vals=d<=0
-  ?[0,0,0,0]
-  :[
-   Math.floor(d/86400000),
-   Math.floor(d/3600000)%24,
-   Math.floor(d/60000)%60,
-   Math.floor(d/1000)%60
-  ];
 
- ['days','hours','minutes','seconds'].forEach((id,i)=>{
+ const vals =
+  d<=0
+   ? [0,0,0,0]
+   : [
+      Math.floor(
+       d/86400000
+      ),
 
-  document.getElementById(id).textContent=
-   String(vals[i]).padStart(2,'0');
+      Math.floor(
+       d/3600000
+      )%24,
 
- });
+      Math.floor(
+       d/60000
+      )%60,
+
+      Math.floor(
+       d/1000
+      )%60
+     ];
+
+
+ [
+  'days',
+  'hours',
+  'minutes',
+  'seconds'
+ ]
+ .forEach(
+  (id,i)=>{
+
+   document.getElementById(
+    id
+   ).textContent =
+    String(
+     vals[i]
+    ).padStart(
+     2,
+     '0'
+    );
+
+  }
+ );
 
 }
 
+
 countdown();
 
-setInterval(countdown,1000);
+setInterval(
+ countdown,
+ 1000
+);
 
 </script>
 
